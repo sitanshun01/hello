@@ -77,6 +77,23 @@ body {
   width: min(88vw, 520px);
 }
 
+.envelope-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+.envelope-button:focus-visible {
+  outline: 2px solid rgba(255, 174, 54, 0.9);
+  outline-offset: 12px;
+  border-radius: 14px;
+}
+
 .envelope {
   position: relative;
   aspect-ratio: 1.18 / 1;
@@ -230,6 +247,114 @@ body {
   );
 }
 
+.love-stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.love-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 89, 56, 0.28), transparent 18rem),
+    radial-gradient(circle at 48% 58%, rgba(255, 180, 61, 0.18), transparent 20rem);
+}
+
+.love-panel {
+  position: relative;
+  width: min(90vw, 520px);
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(22, 23, 25, 0.92), rgba(10, 11, 12, 0.94)),
+    #111315;
+  box-shadow:
+    0 26px 80px rgba(0, 0, 0, 0.56),
+    0 0 48px rgba(255, 91, 24, 0.18);
+  padding: 54px 24px;
+  text-align: center;
+}
+
+.love-kicker {
+  margin: 0;
+  color: rgba(255, 184, 96, 0.9);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.love-panel h1 {
+  margin: 18px auto 0;
+  max-width: 12ch;
+  color: #fff;
+  font-size: clamp(2.5rem, 10vw, 4.75rem);
+  font-weight: 760;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+}
+
+.love-actions {
+  position: absolute;
+  inset: 0;
+}
+
+.yes-button,
+.no-button {
+  position: absolute;
+  min-width: 92px;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 24px;
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+.yes-button {
+  left: 26%;
+  top: 68%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, #ff8c28, #e83b18);
+  box-shadow: 0 16px 34px rgba(232, 59, 24, 0.34);
+}
+
+.no-button {
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.yes-button:focus-visible,
+.no-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.88);
+  outline-offset: 4px;
+}
+
+.love-answer {
+  position: absolute;
+  right: 24px;
+  bottom: 28px;
+  left: 24px;
+  margin: 0;
+  color: rgba(255, 230, 204, 0.94);
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
 @media (max-width: 420px) {
   .envelope-stage {
     padding-inline: 14px;
@@ -241,5 +366,15 @@ body {
 
   .invite-card h1 {
     margin-top: 16px;
+  }
+
+  .love-panel {
+    min-height: 390px;
+  }
+
+  .yes-button,
+  .no-button {
+    min-width: 78px;
+    padding: 12px 20px;
   }
 }
