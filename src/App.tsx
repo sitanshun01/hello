@@ -1,13 +1,12 @@
-import React from 'react';
 import StarBackground from './components/StarBackground';
 import Envelope from './components/Envelope';
 
 function App() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black font-sans">
+    <main className="app-shell">
       <StarBackground />
       <Envelope />
-    </div>
+    </main>
   );
 }
 

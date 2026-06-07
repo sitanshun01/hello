@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
-const StarBackground: React.FC = () => {
+const StarBackground = () => {
   const stars = useMemo(() => {
-    return Array.from({ length: 150 }).map((_, i) => ({
+    return Array.from({ length: 100 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -14,11 +14,11 @@ const StarBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-0 bg-black overflow-hidden">
+    <div className="star-background">
       {stars.map((star) => (
         <motion.div
           key={star.id}
-          className="absolute rounded-full bg-white"
+          className="star"
           style={{
             left: `${star.x}%`,
             top: `${star.y}%`,
@@ -26,8 +26,7 @@ const StarBackground: React.FC = () => {
             height: star.size,
           }}
           animate={{
-            opacity: [0.2, 0.8, 0.2],
-            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.9, 0.3],
           }}
           transition={{
             duration: star.duration,
